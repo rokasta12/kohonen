@@ -11,31 +11,33 @@ import scipy
 from math import sqrt
 from math import pow
 
-def euclidian (pointa, pointb, dimension=2):
+
+def euclidian(pointa, pointb, dimension=2):
     res = 0
 
-    for i in xrange (dimension):
+    for i in xrange(dimension):
         res += (pointa[i] - pointb[i]) * (pointa[i] - pointb[i])
 
-    res = sqrt (res)
+    res = sqrt(res)
 
     return res
 
-def manhattan (pointa, pointb, dimension=2):
+
+def manhattan(pointa, pointb, dimension=2):
     res = 0
 
-    for i in xrange (dimension):
-        res += abs (pointa[i] - pointb[i])
+    for i in xrange(dimension):
+        res += abs(pointa[i] - pointb[i])
 
     return res
 
-def minkowski (pointa, pointb, p, dimension=2):
+
+def minkowski(pointa, pointb, p, dimension=2):
     res = 0
 
-    for i in xrange (dimension):
-        res += pow (abs (pointa[i] - pointb[i]), p)
+    for i in xrange(dimension):
+        res += pow(abs(pointa[i] - pointb[i]), p)
 
-    res = pow (res, 1./p)
+    res = pow(res, 1./p)
 
     return res
-
